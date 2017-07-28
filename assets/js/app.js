@@ -30,6 +30,7 @@ $(document).on("click", "#submit",function(){
         role: role,
         date: date,
         rate: rate,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
 
 
@@ -50,4 +51,15 @@ $(document).on("click", "#submit",function(){
      	myDataTable.append(myrow);
 
      })
+
+     dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+
+       // Change the HTML to reflect
+       $("#input-name").html(snapshot.val().name);
+       $("#input-role").html(snapshot.val().role);
+       $("#input-startdate").html(snapshot.val().date);
+       $("#input-monthly-rate").html(snapshot.val().rate);
+
+     });
+
 });
