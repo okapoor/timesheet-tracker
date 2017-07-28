@@ -52,14 +52,15 @@ $(document).on("click", "#submit",function(){
 
      })
 
-     dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+});
 
-       // Change the HTML to reflect
-       $("#input-name").html(snapshot.val().name);
-       $("#input-role").html(snapshot.val().role);
-       $("#input-startdate").html(snapshot.val().date);
-       $("#input-monthly-rate").html(snapshot.val().rate);
 
-     });
+dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+
+  // Change the HTML to reflect
+  $("#input-name").html(snapshot.val().name);
+  $("#input-role").html(snapshot.val().role);
+  $("#input-startdate").html(snapshot.val().date);
+  $("#input-monthly-rate").html(snapshot.val().rate);
 
 });
