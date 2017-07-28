@@ -1,4 +1,4 @@
-$(document).on("click", "#search",function(){
+$(document).on("click", "#submit",function(){
 	 event.preventDefault();
 	console.log("do something");
 })
