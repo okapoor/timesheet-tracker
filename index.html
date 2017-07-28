@@ -4,7 +4,7 @@
 	<title>Employee Data Management</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -25,35 +25,31 @@
     <h3 class="panel-title"><span class="glyphicon glyphicon-list"></span> Top Articles</h3>
   </div>
   <div class="panel-body">
-    <div class="well">
-      <h3 id="artcile-title"><span class="label label-primary">1</span> Article Name</h3>
-      <p>Date Goes Here</p>
-      <p><a href="#">Link Goes Here</a></p>
-    </div>
+
   </div><!-- /.panel-body -->
 </div><!-- /.panel -->
 
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title"><span class="glyphicon glyphicon-book"></span> Search Parameters</h3>
+    <h3 class="panel-title">Add Employee </h3>
   </div>
   <div class="panel-body">
     <form>
       <div class="form-group">
-        <label for="search-input">Search Term</label>
-        <input type="text" class="form-control" id="search-input">
+        <label for="search-input">Emplyee Name</label>
+        <input type="text" class="form-control" id="input-name">
       </div>
       <div class="form-group">
-        <label for="search-limit">Number of Records to Retrieve:</label>
-        <input type="text" class="form-control" id="search-limit">
+        <label for="search-limit">Role</label>
+        <input type="text" class="form-control" id="input-role">
       </div>
       <div class="form-group">
-        <label for="search-startYear">Start Year</label>
-        <input type="text" class="form-control" id="search-startYear">
+        <label for="search-startYear">Start Date</label>
+        <input type="text" class="form-control" id="input-startdate">
       </div>
       <div class="form-group">
-        <label for="search-endYear">End Year</label>
-        <input type="text" class="form-control" id="search-endYear">
+        <label for="search-endYear">Monthly Rate</label>
+        <input type="text" class="form-control" id="input-monthly-rate">
       </div>
 
       <button id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
