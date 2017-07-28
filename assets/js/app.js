@@ -32,4 +32,22 @@ $(document).on("click", "#submit",function(){
         rate: rate,
       });
 
+
+     database.ref().on("child_added", function(snapshot){
+     	console.log(snapshot.val())
+     	// $("#userdatatable")
+     	var employeeData = snapshot.val();
+     	var myDataTable = $("#userdatatable");
+
+     	var myrow=$("<tr>");
+     	myrow.append("<th>" +employeeData.name + "</th>" );
+     	myrow.append("<th>" +employeeData.role + "</th>" );
+     	myrow.append("<th>" +employeeData.date + "</th>" );
+     	myrow.append("<th>" + "35" + "</th>" );
+     	myrow.append("<th>" +employeeData.rate + "</th>" );
+     	myrow.append("<th>" + "100000" + "</th>" );
+
+     	myDataTable.append(myrow);
+
+     })
 });
