@@ -20,10 +20,10 @@ var database = firebase.database();
 $(document).on("click", "#submit",function(){
 	 event.preventDefault();
    // Grabbed values from text boxes
-      name = $("#input-name").val().trim();
-      role = $("#input-role").val().trim();
-      date = $("#input-date").val().trim();
-      rate = $("#input-rate").val().trim();
+    name = $("#input-name").val().trim();
+    role = $("#input-role").val().trim();
+    date = $("#input-startdate").val().trim();
+    rate = $("#input-monthly-rate").val().trim();
 
      database.ref().push({
         name: name,
