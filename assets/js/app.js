@@ -33,23 +33,25 @@ $(document).on("click", "#submit",function(){
         dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
 
-
-     database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
-     	console.log(snapshot.val())
-     	// $("#userdatatable")
-     	var employeeData = snapshot.val();
-     	var myDataTable = $("#userdatatable");
-
-     	var myrow=$("<tr>");
-     	myrow.append("<th>" +employeeData.name + "</th>" );
-     	myrow.append("<th>" +employeeData.role + "</th>" );
-     	myrow.append("<th>" +employeeData.date + "</th>" );
-     	myrow.append("<th>" + "35" + "</th>" );
-     	myrow.append("<th>" +employeeData.rate + "</th>" );
-     	myrow.append("<th>" + "100000" + "</th>" );
-
-     	myDataTable.append(myrow);
-
-     })
-
 });
+
+database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
+    console.log(snapshot.val())
+    // $("#userdatatable")
+    var employeeData = snapshot.val();
+    var myDataTable = $("#userdatatable");
+    var startMoment = moment(employeeData.date, "MM/DD/YYYY");
+    var monthsWorked = moment().diff(startMoment, "months");
+    var totalBilled = parseInt(monthsWorked)*parseInt(employeeData.rate);
+
+    var myrow=$("<tr>");
+    myrow.append("<th>" +employeeData.name + "</th>" );
+    myrow.append("<th>" +employeeData.role + "</th>" );
+    myrow.append("<th>" +employeeData.date + "</th>" );
+    myrow.append("<th>" + monthsWorked + "</th>" );
+    myrow.append("<th>" +employeeData.rate + "</th>" );
+    myrow.append("<th>" + totalBilled + "</th>" );
+
+    myDataTable.append(myrow);
+
+})
